@@ -15,11 +15,11 @@ hop_petal_01.dxf:
 	openscad -m make -o $@ -D 's=0.05' -D 't=1' hop_petal.scad
 hop_petal_02.dxf:
 	openscad -m make -o $@ -D 's=0.05' -D 't=2' hop_petal.scad
-hop_petal_10.dxf:
+hop_petal_12.dxf:
 	openscad -m make -o $@ -D 's=-0.05' -D 't=0' hop_petal.scad
 hop_petal_11.dxf:
 	openscad -m make -o $@ -D 's=-0.05' -D 't=1' hop_petal.scad
-hop_petal_12.dxf:
+hop_petal_10.dxf:
 	openscad -m make -o $@ -D 's=-0.05' -D 't=2' hop_petal.scad
 
 release: top_plate.dxf
@@ -28,12 +28,15 @@ release: bottom_plate.dxf
 release: 2d_arm_0.dxf
 # custom rule for arm 1
 release: 2d_arm_1.dxf
+# rules for petals that goes with the arm 0
 release: hop_petal_00.dxf
 release: hop_petal_01.dxf
 release: hop_petal_02.dxf
+# rules for petals that goes with the arm 1
 release: hop_petal_10.dxf
 release: hop_petal_11.dxf
 release: hop_petal_12.dxf
+# making the main STL
 release: hop.stl
 clean: $(PHONY)
 	rm *.dxf *.stl
