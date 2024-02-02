@@ -1,8 +1,9 @@
 use <hop.scad>
 
 s=0.05;
-scale1=s;
+size_scale=s;
 t=0;
-scale2=t;
+angle_scale=t;
+plywood=4*0.9;
 
-hjortron_scale(115*(1.-scale1*scale2),p=4*0.9);
+hjortron_scale(115*(1.-size_scale*angle_scale),p=plywood);
